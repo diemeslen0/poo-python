@@ -5,6 +5,9 @@ class Date:
     Toy Class that receive 3 ints to represent a day, a month and a year 
     '''
     def __init__(self, day, month, year):
+        '''
+        Method init with private attributes
+        '''
         self.__day = day
         self.__month = month
         self.__year = year
