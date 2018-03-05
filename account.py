@@ -6,7 +6,7 @@ class Account:
     '''    
     def __init__(self, number, client, value, limit=1000.0):
         '''
-        Init method with private attributes
+        Init method with "private" attributes
         '''
         self.__number  = number
         self.__client = client
@@ -47,6 +47,17 @@ class Account:
         Set the new limit        
         '''
         self.__limit = limit
+    
+    @staticmethod
+    def bank():
+        '''
+        Static method that returns the bank number
+        '''
+        return "001"
+    
+    @staticmethod
+    def banks():
+        return {'BB': '001', 'Caixa': '104', 'Bradesco': '237'}
 
     def deposit(self, value):
         '''
@@ -54,11 +65,21 @@ class Account:
         '''
         self.__value += value
     
+    def __can_take(self, value):
+        '''
+        "Private" method that returns True if the value is less or equal 
+        the account balance. If not, return False
+        '''
+        return value <= self.__value + self.__limit
+    
     def take(self, value):
         '''
-        Method to remove a value from a bank accountss
+        Method to remove a value from a bank accounts 
         '''
-        self.__value -= value
+        if self.__can_take(value):
+            self.__value -= value
+        else:
+            print('You have no enough money to take. Check you balance.')
     
     def transfer(self, value, destiny):
         '''
