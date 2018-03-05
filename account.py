@@ -14,13 +14,34 @@ class Account:
         self.__limit = limit
     
     def get_number(self):
+        '''
+        Returns the account number        
+        '''
         return self.__number
     
     def get_client(self):
+        '''
+        Returns the account client        
+        '''
         return self.__client
 
     def get_value(self):
+        '''
+        Returns the account value        
+        '''
         return self.__value
+    
+    def get_limit(self):
+        '''
+        Returns the account limit        
+        '''
+        return self.__limit
+    
+    def set_limit(self, limit):
+        '''
+        Set the new limit        
+        '''
+        self.__limit = limit
 
     def deposit(self, value):
         '''
