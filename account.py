@@ -12,32 +12,37 @@ class Account:
         self.__client = client
         self.__value = value
         self.__limit = limit
-    
-    def get_number(self):
+
+    @property
+    def number(self):
         '''
         Returns the account number        
         '''
         return self.__number
     
-    def get_client(self):
+    @property
+    def client(self):
         '''
         Returns the account client        
         '''
         return self.__client
-
-    def get_value(self):
+    
+    @property
+    def value(self):
         '''
         Returns the account value        
         '''
         return self.__value
     
-    def get_limit(self):
+    @property
+    def limit(self):
         '''
         Returns the account limit        
         '''
         return self.__limit
     
-    def set_limit(self, limit):
+    @limit.setter
+    def limit(self, limit):
         '''
         Set the new limit        
         '''
